@@ -1,10 +1,12 @@
 package com.brendasoares.voting_session_management.model.entity;
 
+import lombok.Builder;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
+@Builder
 @Entity
 public class Associate {
 
@@ -18,6 +20,12 @@ public class Associate {
 
     @OneToMany(mappedBy = "associate")
     private List<Vote> votes;
+
+    public Associate(long id, String userName, List<Vote> votes) {
+        this.id = id;
+        this.userName = userName;
+        this.votes = votes;
+    }
 
     public Associate() {
     }

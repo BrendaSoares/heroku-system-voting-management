@@ -31,9 +31,4 @@ public class TopicService {
         return topicRepository.findById(id).orElseThrow(TopicNotFoundException::new);
     }
 
-    public void deleteTopicById(Long id) {
-        topicRepository.deleteById(id);
-    }
-
-
 }

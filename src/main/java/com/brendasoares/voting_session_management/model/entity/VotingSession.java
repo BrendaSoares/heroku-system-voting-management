@@ -1,8 +1,11 @@
 package com.brendasoares.voting_session_management.model.entity;
 
+import lombok.Builder;
+
 import javax.persistence.*;
 import java.util.List;
 
+@Builder
 @Entity
 public class VotingSession {
 
@@ -18,6 +21,12 @@ public class VotingSession {
     private List<Vote> votes;
 
     public VotingSession() {
+    }
+
+    public VotingSession(Long id, Topic topic, List<Vote> votes) {
+        this.id = id;
+        this.topic = topic;
+        this.votes = votes;
     }
 
     public VotingSession(Topic topic) {

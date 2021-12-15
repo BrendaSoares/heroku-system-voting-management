@@ -1,8 +1,11 @@
 package com.brendasoares.voting_session_management.model.entity;
 
+import lombok.Builder;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+@Builder
 @Entity
 public class Vote {
 
@@ -25,6 +28,13 @@ public class Vote {
     private VotingSession votingSession;
 
     public Vote() {
+    }
+
+    public Vote(Long id, Boolean choice, Associate associate, VotingSession votingSession) {
+        this.id = id;
+        this.choice = choice;
+        this.associate = associate;
+        this.votingSession = votingSession;
     }
 
     public Vote(VotingSession foundVotingSession, Associate foundAssociate, Boolean choice) {

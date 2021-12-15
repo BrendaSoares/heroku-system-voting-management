@@ -1,8 +1,11 @@
 package com.brendasoares.voting_session_management.model.entity;
 
+import lombok.Builder;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
+@Builder
 @Entity
 public class Topic {
 
@@ -21,6 +24,13 @@ public class Topic {
     private VotingSession votingSession;
 
     public Topic() {
+    }
+
+    public Topic(long id, String title, String description, VotingSession votingSession) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.votingSession = votingSession;
     }
 
     public Topic(String title, String description) {

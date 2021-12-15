@@ -1,8 +1,6 @@
-spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
+spring:
+  datasource:
+    url: jdbc:postgresql://ec2-34-224-229-81.compute-1.amazonaws.com:5432/d1q6aaja02lnnq
+    username: hwrlgehjiomvzt
+    password: 180a0bee2bb2273bba4004e25560665929313bb5484e6cc7c79d236f65097957
 
-#Banco local - Brenda Soares
-spring.datasource.url= jdbc:postgresql://localhost:5432/assembly
-spring.datasource.username=postgres
-spring.datasource.password=test123
-spring.jpa.hibernate.ddl-auto=update
-server.port=8081
