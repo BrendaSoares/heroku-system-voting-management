@@ -9,7 +9,10 @@ To use the api I used the swagger documentation framework. The link will be belo
 # Settings Used
 
 * Java 8
-* Gradle 6.3
+* Gradle 6.5.1
+* Junit
+* Mockito
+* lombook
 * SpringBoot
 * Swagger
 * PostgreSQL
