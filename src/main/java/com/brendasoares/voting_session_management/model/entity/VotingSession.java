@@ -1,16 +1,13 @@
 package com.brendasoares.voting_session_management.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Builder
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
 public class VotingSession {
 
     @Id
@@ -24,6 +21,8 @@ public class VotingSession {
     @OneToMany(mappedBy = "votingSession")
     private List<Vote> votes;
 
+    public VotingSession() {
+    }
 
     public VotingSession(Topic topic) {
         this.topic = topic;

@@ -1,16 +1,11 @@
 package com.brendasoares.voting_session_management.model.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-@Builder
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
 public class Vote {
 
     @Id
@@ -31,6 +26,8 @@ public class Vote {
     @NotNull
     private VotingSession votingSession;
 
+    public Vote() {
+    }
 
     public Vote(VotingSession foundVotingSession, Associate foundAssociate, Boolean choice) {
         this.votingSession = foundVotingSession;

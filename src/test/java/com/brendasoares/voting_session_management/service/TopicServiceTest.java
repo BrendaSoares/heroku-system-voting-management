@@ -12,7 +12,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Optional;
 
-import static com.brendasoares.voting_session_management.util.creator.TopicCreator.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
@@ -28,7 +27,7 @@ public class TopicServiceTest {
     @Mock
     private TopicRepository topicRepository;
 
-    private final Topic validTopic = createValidTopic();
+    private final Topic validTopic = new Topic();
 
     @Test
     void getById_ReturnAssociate_WhenSuccessful() {

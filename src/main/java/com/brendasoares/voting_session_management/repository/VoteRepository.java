@@ -11,5 +11,4 @@ import java.util.List;
 public interface VoteRepository extends CrudRepository<Vote, Long> {
 
     List<Vote> findAll();
-
 }

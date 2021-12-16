@@ -1,6 +1,7 @@
 package com.brendasoares.voting_session_management.service;
 
 import com.brendasoares.voting_session_management.model.dto.VotingSessionDTO;
+import com.brendasoares.voting_session_management.model.entity.Topic;
 import com.brendasoares.voting_session_management.model.entity.VotingSession;
 import com.brendasoares.voting_session_management.repository.VotingSessionRepository;
 import org.junit.jupiter.api.DisplayName;
@@ -13,9 +14,9 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
-import static com.brendasoares.voting_session_management.util.creator.VotingSessionCreator.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
@@ -31,29 +32,30 @@ public class VotingSessionServiceTest {
     @Mock
     private VotingSessionRepository votingSessionRepository;
 
-    private final VotingSession validVotingSession = createValidVotingSession();
-    private final VotingSessionDTO validVotingSessionDto = createValidVotingSessionDto();
     final ArrayList<VotingSession> votingSessionArrayList = new ArrayList<>();
+    private final Topic topicExample = new Topic("Topic", "example description");
+    private final VotingSession votingSessionExample = new VotingSession(topicExample);
 
 
-//  @Test
-//	@DisplayName("getAll returns list of associate when successful")
-//	void getAll_ReturnListAssociate_WhenSuccessful() {
-//		when(votingSessionRepository.findAll(any(List<VotingSession>)))
-//				.thenReturn(votingSessionArrayList);
-//	}
+  @Test
+	@DisplayName("getAll returns list of associate when successful")
+	void getAll_ReturnListAssociate_WhenSuccessful() {
+		when(votingSessionRepository.findAll())
+				.thenReturn(votingSessionArrayList);
+	}
 
-//	@Test
-//	void save_CreateAssociate_WhenSuccessful() {
-//		when(votingSessionRepository.save(any())).thenReturn(validVotingSession);
-//		assertEquals(validVotingSessionDto, votingSessionService.save(validVotingSessionDto));
-//	}
+	@Test
+	void save_CreateAssociate_WhenSuccessful() {
+		when(votingSessionRepository.save(any())).thenReturn(votingSessionExample);
+	}
 
     @Test
-    void getById_ReturnAssociate_WhenSuccessful() {
+    void getById_ReturnVotingSessionById_WhenSuccessful() {
+
+
         when(votingSessionRepository.findById(any())).
-                thenReturn(Optional.of(validVotingSession));
-        assertEquals(validVotingSession.getId(), votingSessionService.getVotingSessionById(1L).getId());
+                thenReturn(Optional.of(votingSessionExample));
+        assertEquals(votingSessionExample.getId(), votingSessionService.getVotingSessionById(1L).getId());
     }
 
     @Test

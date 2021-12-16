@@ -10,5 +10,4 @@ import java.util.List;
 public interface TopicRepository extends CrudRepository<Topic, Long> {
 
     List<Topic> findAll();
-
 }

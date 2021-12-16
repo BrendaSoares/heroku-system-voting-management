@@ -30,8 +30,4 @@ public class AssociateService {
     public Associate getAssociateById(Long id) {
         return associateRepository.findById(id).orElseThrow(AssociateNotFoundException::new);
     }
-
-
-
-
 }

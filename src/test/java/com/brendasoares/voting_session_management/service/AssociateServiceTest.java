@@ -2,7 +2,6 @@ package com.brendasoares.voting_session_management.service;
 
 import com.brendasoares.voting_session_management.model.dto.AssociateDTO;
 import com.brendasoares.voting_session_management.model.entity.Associate;
-import com.brendasoares.voting_session_management.model.entity.Vote;
 import com.brendasoares.voting_session_management.repository.AssociateRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,17 +12,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.web.server.ResponseStatusException;
 
-import static com.brendasoares.voting_session_management.util.creator.AssociateCreator.*;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.springframework.http.HttpStatus.NOT_FOUND;
-
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
+import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 
 @SpringBootTest
@@ -35,24 +31,21 @@ class AssociateServiceTest {
 	@Mock
 	private AssociateRepository associateRepository;
 
-	private final Associate validAssociate = createAssociateValid();
-	private final AssociateDTO validAssociateDto = createAssociateDtoValid();
-
-//	final ArrayList<Associate> associatesArrayList = new ArrayList<>();
+	private final Associate validAssociate = new Associate();
+	final ArrayList<Associate> associatesArrayList = new ArrayList<>();
 
 
-//	@Test
-//	@DisplayName("getAll returns list of associate when successful")
-//	void getAll_ReturnListAssociate_WhenSuccessful() {
-//		when(associateRepository.findAll(any(List<Associate>)))
-//				.thenReturn(associatesArrayList);
-//	}
+	@Test
+	@DisplayName("getAll returns list of associate when successful")
+	void getAll_ReturnListAssociate_WhenSuccessful() {
+		when(associateRepository.findAll())
+				.thenReturn(associatesArrayList);
+	}
 
-//	@Test
-//	void save_CreateAssociate_WhenSuccessful() {
-//		when(associateRepository.save(any())).thenReturn(validAssociate);
-//		assertEquals(validAssociateDto, associateService.addAssociate(validAssociateDto));
-//	}
+	@Test
+	void save_CreateAssociate_WhenSuccessful() {
+		when(associateRepository.save(any())).thenReturn(validAssociate);
+	}
 
 	@Test
 	void getById_ReturnAssociate_WhenSuccessful() {

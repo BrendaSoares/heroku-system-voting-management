@@ -47,3 +47,4 @@ public class VoteService {
         return "VOTES (YES) = " + numberOfVotesYes + "\nVOTES (NO) = " + numberOfvotesNo;
     }
 }
+

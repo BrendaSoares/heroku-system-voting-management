@@ -1,16 +1,8 @@
 package com.brendasoares.voting_session_management.model.dto;
 
-import lombok.Builder;
-import lombok.Value;
-import lombok.With;
-import lombok.extern.jackson.Jacksonized;
-
 import javax.validation.constraints.NotNull;
 
-@Value
-@With
-@Jacksonized
-@Builder
+
 public class VoteDTO {
 
     @NotNull
@@ -22,6 +14,8 @@ public class VoteDTO {
     @NotNull
     private Long idVotingsession;
 
+    public VoteDTO() {
+    }
 
     public VoteDTO(Boolean choice, Long idAssociate, Long idVotingsession) {
         this.choice = choice;
@@ -33,11 +27,23 @@ public class VoteDTO {
         return choice;
     }
 
+    public void setChoice(Boolean choice) {
+        this.choice = choice;
+    }
+
     public Long getIdAssociate() {
         return idAssociate;
     }
 
+    public void setIdAssociate(Long idAssociate) {
+        this.idAssociate = idAssociate;
+    }
+
     public Long getIdVotingsession() {
         return idVotingsession;
+    }
+
+    public void setIdVotingsession(Long idVotingsession) {
+        this.idVotingsession = idVotingsession;
     }
 }

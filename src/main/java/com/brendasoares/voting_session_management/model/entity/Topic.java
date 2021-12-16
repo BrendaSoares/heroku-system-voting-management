@@ -2,15 +2,11 @@ package com.brendasoares.voting_session_management.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
-@Builder
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
 public class Topic {
 
     @Id
@@ -26,6 +22,9 @@ public class Topic {
 
     @OneToOne(mappedBy = "topic")
     private VotingSession votingSession;
+
+    public Topic() {
+    }
 
     public Topic(String title, String description) {
         this.title = title;

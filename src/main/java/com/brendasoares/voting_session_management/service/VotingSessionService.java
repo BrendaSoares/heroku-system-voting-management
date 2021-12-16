@@ -38,5 +38,4 @@ public class VotingSessionService {
     public VotingSession getVotingSessionById(Long id) {
         return votingSessionRepository.findById(id).orElseThrow(VotingNotFoundSessionException::new);
     }
-
 }

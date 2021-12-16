@@ -15,3 +15,5 @@ public class VoteConverter {
         return new VoteDTO(vote.getChoice(), vote.getAssociate().getId(), vote.getVotingSession().getId());
     }
 }
+
+

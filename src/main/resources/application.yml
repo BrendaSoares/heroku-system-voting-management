@@ -1,8 +1,5 @@
-spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
-  
-#Banco local - Brenda Soares
-spring.datasource.url= jdbc:postgresql://localhost:5432/system_voting_management
-spring.datasource.username=postgres
-spring.datasource.password=postgres
-spring.jpa.hibernate.ddl-auto=update
-server.port=8081
+spring:
+  datasource:
+    url: jdbc:postgresql://ec2-3-217-216-13.compute-1.amazonaws.com:5432/d9kvbcr9gj9024
+    username: olazgafsefuqhi
+    password: eeea370c65b256cba1ec379d9ea88c6b1e94572b5c8cdc5c5e7da767d0d73072

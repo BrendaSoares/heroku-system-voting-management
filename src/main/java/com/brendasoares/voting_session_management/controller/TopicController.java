@@ -30,19 +30,11 @@ public class TopicController {
         this.voteService = voteService;
     }
 
-
     @GetMapping
     @ApiOperation("List Topics")
     public ResponseEntity<List<Topic>> listTopic() {
         return ResponseEntity.ok()
                 .body(topicService.getAllTopic());
-    }
-
-    @GetMapping("/votingSession")
-    @ApiOperation("List Voting Sessions")
-    public ResponseEntity<List<VotingSession>> listVotingSession() {
-        return ResponseEntity.ok()
-                .body(votingSessionService.getAllVotingSession());
     }
 
     @GetMapping("/votingSession/vote")
