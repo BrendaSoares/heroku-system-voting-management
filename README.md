@@ -22,7 +22,7 @@ To use the api I used the swagger documentation framework. The link will be belo
 
 * Enter the URL:
 
-
+https://heroku-system-voting-managemen.herokuapp.com/swagger-ui.html
 
 
 
