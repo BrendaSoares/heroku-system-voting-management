@@ -8,7 +8,7 @@
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleHome" value="$USER_HOME$/gradle-4.10.3-all/gradle-4.10.3" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../../../Gradle/gradle-7.3.2" />
         <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
