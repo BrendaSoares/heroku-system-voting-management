@@ -1,6 +1,8 @@
 package com.brendasoares.voting_session_management.model.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -8,6 +10,8 @@ import java.util.List;
 
 @Builder
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Associate {
 
     @Id
@@ -21,14 +25,6 @@ public class Associate {
     @OneToMany(mappedBy = "associate")
     private List<Vote> votes;
 
-    public Associate(long id, String userName, List<Vote> votes) {
-        this.id = id;
-        this.userName = userName;
-        this.votes = votes;
-    }
-
-    public Associate() {
-    }
 
     public Associate(String userName) {
         this.userName = userName;

@@ -1,12 +1,16 @@
 package com.brendasoares.voting_session_management.model.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Builder
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class VotingSession {
 
     @Id
@@ -20,14 +24,6 @@ public class VotingSession {
     @OneToMany(mappedBy = "votingSession")
     private List<Vote> votes;
 
-    public VotingSession() {
-    }
-
-    public VotingSession(Long id, Topic topic, List<Vote> votes) {
-        this.id = id;
-        this.topic = topic;
-        this.votes = votes;
-    }
 
     public VotingSession(Topic topic) {
         this.topic = topic;
